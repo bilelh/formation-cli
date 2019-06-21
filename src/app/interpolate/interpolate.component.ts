@@ -14,6 +14,7 @@ export class InterpolateComponent implements OnInit {
   prenom: string = 'kaiser';
   nom: string = 'Soze'
   formation:Formation = new Formation('Java FullStack' , 'Module Angular')
+  formationJS:Formation;
 
   getFullname(): string {
     return `${this.prenom}  ${this.nom}`;
@@ -22,5 +23,8 @@ export class InterpolateComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    setTimeout(() => {
+      this.formationJS= new Formation('JavaScript' , 'Module JavaScript' );
+      }, 3000)
   }
 }
