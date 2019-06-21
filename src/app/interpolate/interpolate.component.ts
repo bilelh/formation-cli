@@ -17,8 +17,26 @@ export class InterpolateComponent implements OnInit {
   formationJS:Formation;
   color:string = 'red';
 
+  visible:boolean = true;
+
   getFullname(): string {
     return `${this.prenom}  ${this.nom}`;
+  }
+
+  handleClick() {
+    console.log('Le boutton a été cliqué');
+    if(this.visible === true) {
+      this.visible = false ;
+    } else {
+      this.visible = true ;
+    }
+  }
+
+  handleMouseOver() {
+    console.log('the mouse is over the text')
+  }
+  handleMouseOut() {
+    console.log('the mouse is out of the text')
   }
 
   constructor() { }

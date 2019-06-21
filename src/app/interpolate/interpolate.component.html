@@ -18,3 +18,11 @@
 <p [style.color]= "color">
   BINDING DE PROPRIETE
 </p>
+<div>
+    <button (click)="handleClick()">cliquez</button>
+</div>
+<p *ngIf="visible === true" 
+    (mouseover)="handleMouseOver()"
+    (mouseout)="handleMouseOut()">
+    texte de simulation pour les evenements click, mouseOver et mouseOut
+</p>
