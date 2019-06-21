@@ -18,17 +18,24 @@ export class InterpolateComponent implements OnInit {
   color:string = 'red';
 
   visible:boolean = true;
+  isDisplay:boolean = true;
 
   getFullname(): string {
     return `${this.prenom}  ${this.nom}`;
   }
 
   handleClick() {
-    console.log('Le boutton a été cliqué');
     if(this.visible === true) {
       this.visible = false ;
     } else {
       this.visible = true ;
+    }
+  }
+  handleClick2() {
+    if(this.isDisplay === true) {
+      this.isDisplay = false ;
+    } else {
+      this.isDisplay = true ;
     }
   }
 

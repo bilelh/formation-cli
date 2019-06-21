@@ -33,6 +33,21 @@
         placeholder="Saisir une valeur">
     <div>test variable locale : {{customVariable.value}}</div>
 </div>
+<p></p>
 <div>
   <button (click)="customVariable.focus()">Focus the input</button>
 </div>
+
+<div>
+    
+  <div *ngIf = "isDisplay">
+      <p>Nom de la formation: {{formation.nom}} / 
+      Description: {{formation.description}}</p>
+  </div>
+  <button (click)="handleClick2()">supprimer / ajouter la formation</button>
+</div>
+
+
+
+
+
