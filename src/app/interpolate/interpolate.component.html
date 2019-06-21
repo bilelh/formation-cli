@@ -68,13 +68,33 @@
 </div>
 <ul>
 <li *ngFor="let formation of formations; index as i; first as f; even as e; last as l">
-  <p [style.color]="getColorByElement (f , l)" [style.background-color]="getFontByElement (e)">
+  <p [style.color]="getColorByElement (f , l)" [style.background]="getFontByElement (e)">
     {{i}} - {{ formation.nom }}</p>
 </li>
 </ul>
 
+<h2>3.7.1 NGSTYLE</h2>
+<div [ngSwitch]="formations.length">
+    <p *ngSwitchCase="0">Aucune formation disponibles</p>
+    <p *ngSwitchCase="1">Une formation disponible : </p>
+    <p *ngSwitchDefault>Formations disponibles :</p>
+</div>
+<ul>
+<li *ngFor="let formation of formations; index as i; first as f; even as e; last as l">
+  <p [ngStyle]="{color: getColorByElement (f , l), background: getFontByElement (e)}">
+    {{i}} - {{ formation.nom }}</p>
+</li>
+</ul>
 
-
-
-
-
+<h2>3.7.2 NGCLASS</h2>
+<div [ngSwitch]="formations.length">
+    <p *ngSwitchCase="0">Aucune formation disponibles</p>
+    <p *ngSwitchCase="1">Une formation disponible : </p>
+    <p *ngSwitchDefault>Formations disponibles :</p>
+</div>
+<ul>
+<li *ngFor="let formation of formations; index as i; first as f; even as e; last as l">
+  <p [ngClass]="{'first': f, 'last': l, 'even': e}">
+    {{i}} - {{ formation.nom }}</p>
+</li>
+</ul>
