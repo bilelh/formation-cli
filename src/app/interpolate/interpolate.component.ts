@@ -14,11 +14,12 @@ export class InterpolateComponent implements OnInit {
   prenom: string = 'kaiser';
   nom: string = 'Soze'
   formation:Formation = new Formation('Java FullStack' , 'Module Angular')
+  formations:Array<Formation> = [];
   formationJS:Formation;
   color:string = 'red';
 
   visible:boolean = true;
-  isDisplay:boolean = true;
+  isDisplay:boolean = false;
 
   getFullname(): string {
     return `${this.prenom}  ${this.nom}`;
@@ -46,9 +47,28 @@ export class InterpolateComponent implements OnInit {
     console.log('the mouse is out of the text')
   }
 
+  getColorByElement(isFirst:boolean , isLast:boolean) {
+    if (isFirst === true) {
+      return 'red'
+    }
+    if (isLast === true) {
+      return 'green'
+    }
+  }
+
+  getFontByElement(isEven:boolean) {
+    return isEven ? 'grey' : 'white';
+  }
+
   constructor() { }
 
   ngOnInit() {
+    this.formations = [
+      new Formation('Module Angular', 'description Angular'),
+      new Formation('Module JavaScript', 'description JavaScript'),
+      new Formation('Module TypeScript', 'description TypeScript'),
+      ]
+
     setTimeout(() => {
       this.formationJS= new Formation('JavaScript' , 'Module JavaScript' );
       }, 3000)
