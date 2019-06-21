@@ -15,6 +15,7 @@ export class InterpolateComponent implements OnInit {
   nom: string = 'Soze'
   formation:Formation = new Formation('Java FullStack' , 'Module Angular')
   formationJS:Formation;
+  color:string = 'red';
 
   getFullname(): string {
     return `${this.prenom}  ${this.nom}`;
@@ -26,5 +27,13 @@ export class InterpolateComponent implements OnInit {
     setTimeout(() => {
       this.formationJS= new Formation('JavaScript' , 'Module JavaScript' );
       }, 3000)
+
+    setInterval(() =>{
+      if(this.color === 'red') {
+          this.color = 'green';
+      }else {
+        this.color = 'red';
+      }
+    },1000)
   }
 }
