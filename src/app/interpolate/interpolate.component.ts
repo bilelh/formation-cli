@@ -13,7 +13,7 @@ export class InterpolateComponent implements OnInit {
 
   prenom: string = 'kaiser';
   nom: string = 'Soze'
-  formation:Formation = new Formation('Java FullStack' , 'Module Angular')
+  formation:Formation = new Formation('Java FullStack' , 'Module Angular' , 2000 , new Date('02-20-2019') , new Date('05-20-2019'))
   formations:Array<Formation> = [];
   formationJS:Formation;
   color:string = 'red';
@@ -64,13 +64,13 @@ export class InterpolateComponent implements OnInit {
 
   ngOnInit() {
     this.formations = [
-      new Formation('Module Angular', 'description Angular'),
-      new Formation('Module JavaScript', 'description JavaScript'),
-      new Formation('Module TypeScript', 'description TypeScript'),
+      new Formation('Module Angular', 'description Angular' , 3000 , new Date('02/20/2019') , new Date('05/20/2019')),
+      new Formation('Module JavaScript', 'description JavaScript', 4000 , new Date('02/15/2019') , new Date('05/15/2019')),
+      new Formation('Module TypeScript', 'description TypeScript', 5000 , new Date('04/10/2019') , new Date('07/10/2019')),
       ]
 
     setTimeout(() => {
-      this.formationJS= new Formation('JavaScript' , 'Module JavaScript' );
+      this.formationJS= new Formation('JavaScript' , 'Module JavaScript', 3000 , new Date('02/20/2019') , new Date('05/20/2019') );
       }, 3000)
 
     setInterval(() =>{
