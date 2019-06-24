@@ -13,7 +13,8 @@ export class InterpolateComponent implements OnInit {
 
   prenom: string = 'kaiser';
   nom: string = 'Soze'
-  formation:Formation = new Formation('Java FullStack' , 'Module Angular' , 2000 , new Date('02-20-2019') , new Date('05-20-2019'))
+  formation:Formation = new Formation('Java FullStack' 
+  , 'Module Angular' , 2000 , new Date('02-20-2019') , new Date('05-20-2019'))
   formations:Array<Formation> = [];
   formationJS:Formation;
   color:string = 'red';
