@@ -22,9 +22,12 @@
 
 <maf-interpolate></maf-interpolate>
 
-<h2>3.9 INPUT</h2>
+<h2>3.9 INPUT   3.10 OUTPUT</h2>
 <ul>
   <li *ngFor="let formation of formations; index as i; first as f; even as e; last as l">
-    <app-formation-item [ngClass]="{'first': f, 'last': l, 'even': e}" [formation]="formation"></app-formation-item>
+    <app-formation-item [ngClass]="{'first': f, 'last': l, 'even': e}" 
+    [formation]="formation"
+    (formationSelected)="handleFormationSelected($event)"></app-formation-item>
   </li>
 </ul>
+
